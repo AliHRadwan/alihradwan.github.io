@@ -46,7 +46,7 @@ function initNavigation() {
     // Active link on scroll
     const sections = document.querySelectorAll('section[id]');
     
-    window.addEventListener('scroll', () => {
+    function updateActiveLink() {
         const scrollY = window.pageYOffset;
 
         sections.forEach(section => {
@@ -63,7 +63,19 @@ function initNavigation() {
                 }
             }
         });
-    });
+
+        // Set Home as active if at the top of the page
+        if (scrollY < 100) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const homeLink = document.querySelector('.nav-link[href="#home"]');
+            if (homeLink) homeLink.classList.add('active');
+        }
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    
+    // Set Home as active on initial page load
+    updateActiveLink();
 }
 
 // =====================================================
