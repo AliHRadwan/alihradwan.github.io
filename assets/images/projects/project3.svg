@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bg3)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.1">
+    <line x1="0" y1="50" x2="600" y2="50" stroke="#f472b6" stroke-width="1"/>
+    <line x1="0" y1="100" x2="600" y2="100" stroke="#f472b6" stroke-width="1"/>
+    <line x1="0" y1="150" x2="600" y2="150" stroke="#f472b6" stroke-width="1"/>
+    <line x1="0" y1="200" x2="600" y2="200" stroke="#f472b6" stroke-width="1"/>
+    <line x1="0" y1="250" x2="600" y2="250" stroke="#f472b6" stroke-width="1"/>
+    <line x1="0" y1="300" x2="600" y2="300" stroke="#f472b6" stroke-width="1"/>
+    <line x1="0" y1="350" x2="600" y2="350" stroke="#f472b6" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="400" stroke="#f472b6" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="400" stroke="#f472b6" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="400" stroke="#f472b6" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="400" stroke="#f472b6" stroke-width="1"/>
+    <line x1="500" y1="0" x2="500" y2="400" stroke="#f472b6" stroke-width="1"/>
+  </g>
+  
+  <!-- Fashion / Clothing icon -->
+  <g transform="translate(250, 100)">
+    <circle cx="50" cy="80" r="90" fill="url(#accent3)" opacity="0.15"/>
+    <!-- T-shirt / Clothing -->
+    <path d="M30,35 L20,45 L30,55 L30,110 L70,110 L70,55 L80,45 L70,35 L60,45 L40,45 Z" 
+          fill="none" stroke="url(#accent3)" stroke-width="3" stroke-linejoin="round"/>
+    <!-- Collar -->
+    <path d="M40,35 Q50,50 60,35" fill="none" stroke="url(#accent3)" stroke-width="2"/>
+    <!-- Price tag -->
+    <circle cx="85" cy="70" r="15" fill="#1a1a2e" stroke="#f472b6" stroke-width="2"/>
+    <text x="85" y="74" font-family="Arial" font-size="10" fill="#f472b6" text-anchor="middle">$</text>
+    <!-- Shopping bag -->
+    <rect x="5" y="80" width="20" height="25" rx="2" fill="none" stroke="#6366f1" stroke-width="2"/>
+    <path d="M9,80 L9,75 Q9,70 15,70 Q21,70 21,75 L21,80" fill="none" stroke="#6366f1" stroke-width="2"/>
+  </g>
+  
+  <!-- Label -->
+  <rect x="175" y="300" width="250" height="40" rx="20" fill="url(#accent3)" opacity="0.9"/>
+  <text x="300" y="326" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="600">FASHION E-COMMERCE</text>
+</svg>

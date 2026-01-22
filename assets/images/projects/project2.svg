@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d3ee"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bg2)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.1">
+    <line x1="0" y1="50" x2="600" y2="50" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="0" y1="100" x2="600" y2="100" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="0" y1="150" x2="600" y2="150" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="0" y1="200" x2="600" y2="200" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="0" y1="250" x2="600" y2="250" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="0" y1="300" x2="600" y2="300" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="0" y1="350" x2="600" y2="350" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="400" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="400" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="400" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="400" stroke="#22d3ee" stroke-width="1"/>
+    <line x1="500" y1="0" x2="500" y2="400" stroke="#22d3ee" stroke-width="1"/>
+  </g>
+  
+  <!-- Book icon -->
+  <g transform="translate(250, 100)">
+    <circle cx="50" cy="80" r="90" fill="url(#accent2)" opacity="0.15"/>
+    <!-- Open book -->
+    <path d="M50,30 L50,120" stroke="url(#accent2)" stroke-width="2"/>
+    <!-- Left page -->
+    <path d="M50,30 Q30,25 15,35 L15,110 Q30,100 50,105" fill="none" stroke="url(#accent2)" stroke-width="3"/>
+    <!-- Right page -->
+    <path d="M50,30 Q70,25 85,35 L85,110 Q70,100 50,105" fill="none" stroke="url(#accent2)" stroke-width="3"/>
+    <!-- Page lines left -->
+    <line x1="25" y1="50" x2="45" y2="48" stroke="#22d3ee" stroke-width="2" opacity="0.6"/>
+    <line x1="25" y1="65" x2="45" y2="63" stroke="#22d3ee" stroke-width="2" opacity="0.6"/>
+    <line x1="25" y1="80" x2="45" y2="78" stroke="#22d3ee" stroke-width="2" opacity="0.6"/>
+    <!-- Page lines right -->
+    <line x1="55" y1="48" x2="75" y2="50" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+    <line x1="55" y1="63" x2="75" y2="65" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+    <line x1="55" y1="78" x2="75" y2="80" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+    <!-- Shopping cart overlay -->
+    <circle cx="80" cy="40" r="18" fill="#1a1a2e" stroke="#22d3ee" stroke-width="2"/>
+    <path d="M72,38 L76,38 L80,48 L88,48" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="78" cy="52" r="2" fill="#22d3ee"/>
+    <circle cx="86" cy="52" r="2" fill="#22d3ee"/>
+  </g>
+  
+  <!-- Label -->
+  <rect x="175" y="300" width="250" height="40" rx="20" fill="url(#accent2)" opacity="0.9"/>
+  <text x="300" y="326" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="600">BOOKSTORE E-COMMERCE</text>
+</svg>
