@@ -1202,6 +1202,7 @@ a {
 @media (max-width: 1024px) {
     .hero {
         min-height: auto;
+        padding-top: 100px;
         padding-bottom: 20px;
     }
     
@@ -1343,6 +1344,7 @@ a {
     
     .hero {
         min-height: auto;
+        padding-top: 100px;
         padding-bottom: 20px;
     }
     
