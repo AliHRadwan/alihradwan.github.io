@@ -9,7 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillAnimations();
     initBackToTop();
     initTypingEffect();
+    initCopyrightYear();
 });
+
+function initCopyrightYear() {
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+}
 
 // =====================================================
 // Navigation
