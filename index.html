@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = 'light';
+                if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+                else document.documentElement.removeAttribute('data-theme');
+            } catch (e) { /* ignore */ }
+        })();
+    </script>
     <!-- Google Analytics tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P12L7KCVX2"></script>
     <script>
@@ -13,14 +23,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="NryAdQo6md1XJkTh_lLJXFKdOnW-DUCRKFAnggM00Qc" />
-    <meta name="description" content="Ali H. Radwan - Software Engineer specializing in PHP, Laravel, Node.js, and full-stack web development. Building robust, scalable web applications and AI-driven solutions." />
+    <meta name="description" content="Ali H. Radwan - Backend Developer in Cairo, Egypt (open to remote). Laravel, Node.js, REST APIs, AWS, and AI-driven full-stack projects." />
     <meta name="keywords" content="Software Engineer, Backend Developer, PHP, Laravel, Node.js, Full Stack Developer, REST API, AWS, Docker" />
     <meta name="author" content="Ali H. Radwan" />
+    <link rel="canonical" href="https://alihradwan.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alihradwan.github.io/" />
+    <meta property="og:title" content="Ali H. Radwan | Backend Developer" />
+    <meta property="og:description" content="Backend Developer specializing in Laravel and Node.js. Based in Cairo, Egypt — open to remote. Scalable APIs, AWS, and production-ready full-stack projects." />
+    <meta property="og:image" content="https://alihradwan.github.io/assets/images/ali.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ali H. Radwan | Backend Developer" />
+    <meta name="twitter:description" content="Backend Developer specializing in Laravel and Node.js. Cairo, Egypt · open to remote." />
+    <meta name="twitter:image" content="https://alihradwan.github.io/assets/images/ali.png" />
     <title>Ali H. Radwan | Software Engineer</title>
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preload" href="./assets/vendor/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/vendor/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ali H. Radwan",
+        "jobTitle": "Backend Developer",
+        "url": "https://alihradwan.github.io/",
+        "email": "mailto:alihradwan@outlook.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cairo",
+            "addressCountry": "EG"
+        },
+        "sameAs": [
+            "https://linkedin.com/in/alihradwan",
+            "https://github.com/alihradwan"
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -29,16 +69,23 @@
             <a href="#home" class="nav-logo">
                 <span class="logo-bracket">&lt;</span>Ali H<span class="logo-dot">.</span> Radwan<span class="logo-bracket">/&gt;</span>
             </a>
+            <div class="nav-spacer" aria-hidden="true"></div>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+            <div class="nav-controls">
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme" aria-pressed="false">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -52,6 +99,10 @@
                     <span class="typing-text">Backend Developer</span>
                     <span class="cursor">|</span>
                 </h2>
+                <p class="hero-location">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    Cairo, Egypt · Open to Remote
+                </p>
                 <p class="hero-description">
                     I build scalable web applications and AI-driven solutions using <span class="highlight">PHP/Laravel</span> and <span class="highlight">Node.js</span>. 
                     Specializing in RESTful APIs, database design, and DevOps with Docker & AWS.
@@ -109,9 +160,9 @@
                         Crafting <span class="gradient-text">scalable backend solutions</span> that power modern web applications
                     </h3>
                     <p class="about-description">
-                        ITI Graduate specializing in PHP (Laravel) and Node.js (Express), with 1+ years of hands-on experience. 
-                        I transform complex requirements into elegant, maintainable code while leveraging modern 
-                        DevOps practices for seamless deployment.
+                        Backend Developer with 1+ years delivering scalable web applications, from API design
+                        and data modeling through Docker and AWS deployment. I work mainly in Laravel and Node.js, with
+                        a focus on secure, maintainable code and reliable delivery on agile teams.
                     </p>
                     
                     <div class="about-metrics">
@@ -181,6 +232,39 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-timeline">
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Backend Developer</h3>
+                        <span class="timeline-company">No Limit Tech · USA</span>
+                    </div>
+                    <p class="timeline-meta">Full-time · Remote · Apr 2026 – Present</p>
+                    <ul class="timeline-bullets">
+                        <li>Develop and maintain robust backend solutions and secure RESTful APIs using the PHP/Laravel ecosystem.</li>
+                        <li>Manage relational and non-relational databases while maintaining ACID properties and data integrity.</li>
+                        <li>Collaborate with cross-functional remote teams to integrate components and streamline CI/CD pipelines.</li>
+                        <li>Apply clean architecture, SOLID principles, and secure coding practices.</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Technical Support Engineer</h3>
+                        <span class="timeline-company">First International · Giza, Egypt</span>
+                    </div>
+                    <p class="timeline-meta">Jan 2020 – Dec 2024</p>
+                    <ul class="timeline-bullets">
+                        <li>Provided technical support for laboratory devices and equipment.</li>
+                        <li>Conducted maintenance, troubleshooting, and calibration of lab devices.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
@@ -195,7 +279,7 @@
                             <i class="fab fa-php"></i>
                         </div>
                         <h3>PHP</h3>
-                        <p class="skill-desc">OOP, MVC Pattern, Composer</p>
+                        <p class="skill-desc">OOP, MVC Pattern, Composer, PSR-4</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 95%"></div>
                         </div>
@@ -206,7 +290,7 @@
                             <i class="fab fa-laravel"></i>
                         </div>
                         <h3>Laravel</h3>
-                        <p class="skill-desc">Eloquent, Blade, Artisan, Queues</p>
+                        <p class="skill-desc">Eloquent, Filament, Pest, Policies & Gates</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 95%"></div>
                         </div>
@@ -217,7 +301,7 @@
                             <i class="fab fa-node-js"></i>
                         </div>
                         <h3>Node.js</h3>
-                        <p class="skill-desc">Express.js, REST APIs, WebSockets</p>
+                        <p class="skill-desc">Express.js, REST APIs, WebSockets, Event Loop</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 85%"></div>
                         </div>
@@ -228,11 +312,22 @@
                             <i class="fab fa-python"></i>
                         </div>
                         <h3>Python</h3>
-                        <p class="skill-desc">FastAPI, Scripting, AI Integration</p>
+                        <p class="skill-desc">FastAPI, Scripting, AI Integration, RAG</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 70%"></div>
                         </div>
                         <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-card" data-level="advanced">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Express</h3>
+                        <p class="skill-desc">Middleware, REST APIs, JWT, Routing</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 85%"></div>
+                        </div>
+                        <span class="skill-level">Advanced</span>
                     </div>
                 </div>
             </div>
@@ -246,7 +341,7 @@
                             <i class="fas fa-database"></i>
                         </div>
                         <h3>MySQL</h3>
-                        <p class="skill-desc">ERD Design, Optimization, Joins</p>
+                        <p class="skill-desc">ERD Design, Optimization, Joins, ACID</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 90%"></div>
                         </div>
@@ -257,7 +352,18 @@
                             <i class="fas fa-leaf"></i>
                         </div>
                         <h3>MongoDB</h3>
-                        <p class="skill-desc">Atlas, Aggregation, Indexing</p>
+                        <p class="skill-desc">Atlas, Aggregation, Indexing, Schema Design</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 85%"></div>
+                        </div>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-card" data-level="advanced">
+                        <div class="skill-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Redis</h3>
+                        <p class="skill-desc">Caching, Sessions, Pub/Sub, Rate Limiting</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 85%"></div>
                         </div>
@@ -265,23 +371,23 @@
                     </div>
                     <div class="skill-card" data-level="intermediate">
                         <div class="skill-icon">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-fire"></i>
                         </div>
-                        <h3>Redis</h3>
-                        <p class="skill-desc">Caching, Sessions, Pub/Sub</p>
+                        <h3>Firebase</h3>
+                        <p class="skill-desc">Firestore, Auth, Cloud Functions, Hosting</p>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 75%"></div>
+                            <div class="skill-progress" style="--progress: 80%"></div>
                         </div>
                         <span class="skill-level">Intermediate</span>
                     </div>
                     <div class="skill-card" data-level="intermediate">
                         <div class="skill-icon">
-                            <i class="fas fa-fire"></i>
+                            <i class="fas fa-database"></i>
                         </div>
-                        <h3>Firebase</h3>
-                        <p class="skill-desc">Firestore, Auth, Cloud Functions</p>
+                        <h3>PostgreSQL</h3>
+                        <p class="skill-desc">Relations, indexing, migrations, Transactions</p>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 80%"></div>
+                            <div class="skill-progress" style="--progress: 72%"></div>
                         </div>
                         <span class="skill-level">Intermediate</span>
                     </div>
@@ -297,7 +403,7 @@
                             <i class="fab fa-docker"></i>
                         </div>
                         <h3>Docker</h3>
-                        <p class="skill-desc">Containers, Compose, Networks</p>
+                        <p class="skill-desc">Containers, Compose, Networks, Images</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 85%"></div>
                         </div>
@@ -308,7 +414,7 @@
                             <i class="fab fa-aws"></i>
                         </div>
                         <h3>AWS</h3>
-                        <p class="skill-desc">EC2, S3, RDS, Deployment</p>
+                        <p class="skill-desc">EC2, S3, RDS, CI/CD, IAM, CloudWatch</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 80%"></div>
                         </div>
@@ -319,7 +425,7 @@
                             <i class="fab fa-linux"></i>
                         </div>
                         <h3>Linux</h3>
-                        <p class="skill-desc">Administration, Bash, SSH</p>
+                        <p class="skill-desc">Administration, Bash, SSH, systemd</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 85%"></div>
                         </div>
@@ -330,11 +436,22 @@
                             <i class="fas fa-cogs"></i>
                         </div>
                         <h3>Nginx</h3>
-                        <p class="skill-desc">Reverse Proxy, SSL, Config</p>
+                        <p class="skill-desc">Reverse Proxy, SSL, Config, Load Balancing</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 80%"></div>
                         </div>
                         <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-card" data-level="intermediate">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Apache</h3>
+                        <p class="skill-desc">Virtual hosts, modules, deployment, mod_rewrite</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 70%"></div>
+                        </div>
+                        <span class="skill-level">Intermediate</span>
                     </div>
                 </div>
             </div>
@@ -348,7 +465,7 @@
                             <i class="fab fa-angular"></i>
                         </div>
                         <h3>Angular</h3>
-                        <p class="skill-desc">Components, Services, Material</p>
+                        <p class="skill-desc">Components, Services, Material, RxJS</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 75%"></div>
                         </div>
@@ -359,7 +476,7 @@
                             <i class="fab fa-react"></i>
                         </div>
                         <h3>React</h3>
-                        <p class="skill-desc">Hooks, State, Components</p>
+                        <p class="skill-desc">Hooks, State, Components, Context API</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 70%"></div>
                         </div>
@@ -370,7 +487,7 @@
                             <i class="fab fa-js-square"></i>
                         </div>
                         <h3>JavaScript</h3>
-                        <p class="skill-desc">ES6+, TypeScript, Async</p>
+                        <p class="skill-desc">ES6+, TypeScript, Async, Modules</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 85%"></div>
                         </div>
@@ -381,11 +498,33 @@
                             <i class="fab fa-bootstrap"></i>
                         </div>
                         <h3>Bootstrap</h3>
-                        <p class="skill-desc">Responsive, Grid, Components</p>
+                        <p class="skill-desc">Responsive, Grid, Components, Utilities</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 90%"></div>
                         </div>
                         <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-card" data-level="intermediate">
+                        <div class="skill-icon">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+                        <h3>Vue.js</h3>
+                        <p class="skill-desc">Composition API, components, routing, Pinia</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 75%"></div>
+                        </div>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-card" data-level="intermediate">
+                        <div class="skill-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>Tailwind CSS</h3>
+                        <p class="skill-desc">Utility-first UI, responsive design, JIT</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 78%"></div>
+                        </div>
+                        <span class="skill-level">Intermediate</span>
                     </div>
                 </div>
             </div>
@@ -399,7 +538,7 @@
                             <i class="fas fa-exchange-alt"></i>
                         </div>
                         <h3>RESTful APIs</h3>
-                        <p class="skill-desc">Design, JWT Auth, Documentation</p>
+                        <p class="skill-desc">Design, Versioning, OpenAPI / Swagger Docs</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 95%"></div>
                         </div>
@@ -410,7 +549,7 @@
                             <i class="fab fa-git-alt"></i>
                         </div>
                         <h3>Git & GitHub</h3>
-                        <p class="skill-desc">Branching, PRs, Collaboration</p>
+                        <p class="skill-desc">Branching, PRs, Collaboration, Code review</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 90%"></div>
                         </div>
@@ -421,22 +560,52 @@
                             <i class="fas fa-sync-alt"></i>
                         </div>
                         <h3>CI/CD</h3>
-                        <p class="skill-desc">GitHub Actions, Pipelines</p>
+                        <p class="skill-desc">GitHub Actions, Pipelines, Automated tests, Deployments</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="--progress: 80%"></div>
                         </div>
                         <span class="skill-level">Advanced</span>
                     </div>
-                    <div class="skill-card" data-level="intermediate">
+                    <div class="skill-card" data-level="advanced">
                         <div class="skill-icon">
                             <i class="fas fa-robot"></i>
                         </div>
                         <h3>AI Integration</h3>
-                        <p class="skill-desc">RAG Systems, Chatbots, n8n</p>
+                        <p class="skill-desc">RAG Systems, Chatbots, n8n, Telegram bots</p>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 75%"></div>
+                            <div class="skill-progress" style="--progress: 85%"></div>
                         </div>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-card" data-level="advanced">
+                        <div class="skill-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h3>Postman</h3>
+                        <p class="skill-desc">Collections, testing, API workflows, Mock servers</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 88%"></div>
+                        </div>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category skills-category-architecture">
+                <h3 class="category-title"><i class="fas fa-sitemap"></i> Architecture &amp; Concepts</h3>
+                <div class="architecture-panel">
+                    <div class="architecture-pills">
+                        <span class="concept-pill">SOLID</span>
+                        <span class="concept-pill">OOP</span>
+                        <span class="concept-pill">Design Patterns</span>
+                        <span class="concept-pill">MVC</span>
+                        <span class="concept-pill">RESTful APIs</span>
+                        <span class="concept-pill">ACID</span>
+                        <span class="concept-pill">ERD / Normalization</span>
+                        <span class="concept-pill">Clean Architecture</span>
+                        <span class="concept-pill">JWT Auth</span>
+                        <span class="concept-pill">WebSockets</span>
+                        <span class="concept-pill">Serverless</span>
                     </div>
                 </div>
             </div>
@@ -450,14 +619,16 @@
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="./assets/images/projects/LaraTicket/LaraTicket.svg" alt="Event Ticketing Platform">
+                        <div class="project-carousel" data-project="LaraTicket"></div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://youtu.be/_3LmZhpbWjg" target="_blank" class="project-link" title="View Project">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="https://youtu.be/_3LmZhpbWjg" target="_blank" rel="noopener" class="project-link" aria-label="Video demo on YouTube">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                    <span class="project-link-label">Demo</span>
                                 </a>
-                                <a href="https://github.com/AliHRadwan/LaraTicket" target="_blank" class="project-link" title="View Code">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://github.com/AliHRadwan/LaraTicket" target="_blank" rel="noopener" class="project-link" aria-label="View source on GitHub">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                    <span class="project-link-label">Code</span>
                                 </a>
                             </div>
                         </div>
@@ -473,17 +644,20 @@
                             <span>Stripe</span>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-secondary project-details-btn" data-project="LaraTicket">View details</button>
                 </article>
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="./assets/images/projects/SwiftHost/SwiftHost.svg" alt="AI Concierge System">
+                        <div class="project-carousel" data-project="SwiftHost"></div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://youtu.be/Ion_4RaKAfs" target="_blank" class="project-link" title="View Project">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="https://youtu.be/Ion_4RaKAfs" target="_blank" rel="noopener" class="project-link" aria-label="Video demo on YouTube">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                    <span class="project-link-label">Demo</span>
                                 </a>
-                                <a href="https://github.com/AliHRadwan/ITI-Graduation-Project" target="_blank" class="project-link" title="View Code">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://github.com/AliHRadwan/ITI-Graduation-Project" target="_blank" rel="noopener" class="project-link" aria-label="View source on GitHub">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                    <span class="project-link-label">Code</span>
                                 </a>
                             </div>
                         </div>
@@ -499,17 +673,20 @@
                             <span>n8n</span>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-secondary project-details-btn" data-project="SwiftHost">View details</button>
                 </article>
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="./assets/images/projects/Bookly/Bookly.svg" alt="Bookstore E-Commerce">
+                        <div class="project-carousel" data-project="Bookly"></div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://youtu.be/yNnAecYfBzo" target="_blank" class="project-link" title="View Project">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="https://youtu.be/yNnAecYfBzo" target="_blank" rel="noopener" class="project-link" aria-label="Video demo on YouTube">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                    <span class="project-link-label">Demo</span>
                                 </a>
-                                <a href="https://github.com/AliHRadwan/Node-Project" target="_blank" class="project-link" title="View Code">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://github.com/AliHRadwan/Node-Project" target="_blank" rel="noopener" class="project-link" aria-label="View source on GitHub">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                    <span class="project-link-label">Code</span>
                                 </a>
                             </div>
                         </div>
@@ -525,17 +702,20 @@
                             <span>Redis</span>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-secondary project-details-btn" data-project="Bookly">View details</button>
                 </article>
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="./assets/images/projects/MAYA/MAYA.svg" alt="Fashion E-Commerce">
+                        <div class="project-carousel" data-project="MAYA"></div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://youtu.be/ltAtjIxwwT0" target="_blank" class="project-link" title="View Project">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="https://youtu.be/ltAtjIxwwT0" target="_blank" rel="noopener" class="project-link" aria-label="Video demo on YouTube">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                    <span class="project-link-label">Demo</span>
                                 </a>
-                                <a href="https://github.com/AliHRadwan/JS-Project" target="_blank" class="project-link" title="View Code">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://github.com/AliHRadwan/JS-Project" target="_blank" rel="noopener" class="project-link" aria-label="View source on GitHub">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                    <span class="project-link-label">Code</span>
                                 </a>
                             </div>
                         </div>
@@ -551,6 +731,7 @@
                             <span>Stripe</span>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-secondary project-details-btn" data-project="MAYA">View details</button>
                 </article>
             </div>
         </div>
@@ -560,9 +741,15 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-intro">
-                Have a project in mind or want to collaborate? Feel free to reach out!
-            </p>
+            <div class="contact-header">
+                <p class="contact-intro">
+                    Have a project in mind or want to collaborate? Feel free to reach out!
+                </p>
+                <p class="contact-location">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    Cairo, Egypt · Open to Remote
+                </p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-card">
@@ -580,7 +767,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>LinkedIn</h3>
-                            <a href="https://linkedin.com/in/alihradwan" target="_blank">linkedin.com/in/alihradwan</a>
+                            <a href="https://linkedin.com/in/alihradwan" target="_blank" rel="noopener">linkedin.com/in/alihradwan</a>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -598,7 +785,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>WhatsApp</h3>
-                            <a href="https://wa.me/+201001192593" target="_blank">+20 100 119 2593</a>
+                            <a href="https://wa.me/+201001192593" target="_blank" rel="noopener">+20 100 119 2593</a>
                         </div>
                     </div>
                 </div>
@@ -633,10 +820,11 @@
                 <div class="footer-logo">
                     <span class="logo-bracket">&lt;</span>Ali H<span class="logo-dot">.</span> Radwan<span class="logo-bracket">/&gt;</span>
                 </div>
-                <p class="footer-text">Building the backend that powers the web.</p>
+                <p class="footer-text">Building the Backend that powers the Web.</p>
                 <div class="footer-links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
@@ -647,6 +835,31 @@
             </div>
         </div>
     </footer>
+
+    <dialog class="project-modal" id="project-modal" aria-labelledby="project-modal-title">
+        <div class="project-modal-inner">
+            <div class="project-modal-header">
+                <h2 class="project-modal-title" id="project-modal-title"></h2>
+                <button type="button" class="project-modal-close" aria-label="Close project details">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="project-modal-body">
+                <div class="project-modal-carousel"></div>
+                <p class="project-modal-desc"></p>
+                <ul class="project-modal-features"></ul>
+                <div class="project-modal-tech"></div>
+                <div class="project-modal-actions">
+                    <a href="#" class="btn btn-primary project-modal-demo" target="_blank" rel="noopener">
+                        <i class="fas fa-play" aria-hidden="true"></i> Watch demo
+                    </a>
+                    <a href="#" class="btn btn-secondary project-modal-code" target="_blank" rel="noopener">
+                        <i class="fab fa-github" aria-hidden="true"></i> View code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </dialog>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
