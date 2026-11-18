@@ -24,7 +24,7 @@ const PROJECTS = {
         description: 'A multilingual agentic AI concierge for automated guest support and service management. Features automated ticketing, RAG-based chatbot, Telegram integration, and admin dashboard.',
         demo: 'https://youtu.be/Ion_4RaKAfs',
         code: 'https://github.com/AliHRadwan/ITI-Graduation-Project',
-        tech: ['Laravel', 'React', 'FastAPI', 'AWS', 'n8n'],
+        tech: ['Laravel', 'React', 'FastAPI', 'PostgreSQL', 'AWS', 'n8n'],
         images: ['01.jpg', '02.png', '03.png', '04.png', '05.png'],
         features: [
             'Automated ticketing system (n8n workflows)',
